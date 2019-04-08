@@ -1,0 +1,42 @@
+<Page ux:Class="LoginPage">
+<Router ux:Dependency="router" />
+	<JavaScript File="LoginPage.js" />
+	<ImageFill File="../Images/loginbg.png" Color="0.5177243, 0.5177243, 0.5177243, 1" Opacity="0.9" StretchMode="Fill" />
+	<Panel Width="100%" Height="100%" ux:Name="Page" Opacity="1">
+		<!-- <Image File="../Images/MainPage_logo.png" Y="height(Page)*0.15" Width="width(Page)*0.53" Alignment="Default" /> -->
+		<Text Value="Dream Plus" FontSize="50" Y="height(Page)*0.15" Width="width(Page)*0.78" Color="#FFFFFF" Opacity="0.8"/>
+
+	</Panel>
+	<StackPanel Opacity="0.9">
+		<Rectangle Width="width(Page)*0.75" Height="height(Page)*0.065" Color="#F4F4F4" CornerRadius="20" Y="300">
+			<TextInput Row="0" Column="1" PlaceholderText="아이디" PlaceholderColor="#999" Value="{ID}" TextColor="#000" CaretColor="#000" Alignment="Center" FontSize="20" /> 
+		</Rectangle>
+
+		<Rectangle Width="width(Page)*0.75" Height="height(Page)*0.065" Color="#F4F4F4" CornerRadius="20" Y="310">
+			
+			<TextInput Row="0" Column="1" PlaceholderText="비밀번호" PlaceholderColor="#999"  Value="{Password}" TextColor="#000" CaretColor="#000" Alignment="Center" FontSize="20" IsPassword="true"/> 
+		</Rectangle>
+			
+
+		<Rectangle ux:Name="loginbtn" Width="width(Page)*0.75" Height="height(Page)*0.065" Color="#1FEA78" CornerRadius="20" Y="320">
+			<Text Value="로그인" TextColor="#000" Alignment="Center" FontSize="15" /> 
+			<WhilePressed>
+				<Scale Target="loginbtn" Factor="0.9" Duration="0.05" />
+			</WhilePressed>
+			<Clicked>
+				<Callback Handler="{SignIn}"/>
+			</Clicked>
+		</Rectangle>
+
+		<Panel ux:Name="signupbtn" Width="150" Height="50" Margin="20" Y="370">
+			<Text Value="회원가입" Font="Bold" Color="#FFFFFF" Alignment="Center" FontSize="18"/>
+			<WhilePressed>
+				<Scale Target="signupbtn" Factor="0.9" Duration="0.05" />
+			</WhilePressed>
+			<Clicked>
+				<Callback Handler="{SignUp}"/>
+			</Clicked>
+		</Panel>
+	</StackPanel>
+
+</Page>

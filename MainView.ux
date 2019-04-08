@@ -1,0 +1,12 @@
+<App>
+	<Router ux:Name="router" />
+	<Navigator DefaultPath="LoginPage">
+		<LoginPage ux:Template="LoginPage" router="router"/>
+		<MainPage ux:Template="MainPage" router="router" />
+		<SignUp ux:Template="SignUp" router="router" />
+		<!-- <Test ux:Template="Test" router="router" />
+		<Test1 ux:Template="Test1" router="router" /> -->
+		<!-- <SideBar ux:Template="SideBar" router="router" /> -->
+		<!-- Color="#4E4E4F"  -->
+	</Navigator>
+</App>

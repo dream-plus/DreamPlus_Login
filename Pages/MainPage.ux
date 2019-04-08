@@ -1,0 +1,57 @@
+<Page ux:Class="MainPage" ux:Name="Test1">
+<Router ux:Dependency="router" />
+<JavaScript File="MainPage.js" />
+	<!-- <Text Value="111" Alignment="Center" /> -->
+	<EdgeNavigator>
+		<Panel ux:Name="sidebar" Edge="Left" Width="100%" Margin="0,0,56,0" Background="#37474F">
+
+			<Text Value="dsadas" Color="#FFFFFF"/>
+			<!-- 여기부터 사이드바 메뉴 -->	
+
+			<!-- <StackPanel> -->
+			<StackPanel><Text Value="{getID}" Color="#FFFFFF" /></StackPanel>
+				
+			<!-- </StackPanel> -->
+			<Shadow ux:Name="shadow" Angle="180" Distance="8" Size="16" Color="#0000" />
+			<ActivatingAnimation>
+				<Change shadow.Color="#0004" />
+				<Change sidebarFade.Opacity="1" />
+			</ActivatingAnimation>
+		</Panel>
+		
+		<DockPanel Color="#FFFFFF">
+
+			<Rectangle ux:Name="sidebarFade" Layer="Overlay" Color="#0005" Opacity="0" HitTestMode="None" />
+			<StackPanel Dock="Top" Color="#2196F3">
+				<Shadow Size="3" Distance="1" />
+				<StatusBarBackground />
+				<Panel Height="56">
+					<SideBar Alignment="Left">
+						<Clicked>
+							<NavigateToggle Target="sidebar" />
+						</Clicked>
+					</SideBar>
+				</Panel>
+			</StackPanel>
+
+			<ScrollView>
+				<Panel Color="#FFFFFF" Width="width(Test1)" Height="height(Test1)*1.5">
+		
+					<StackPanel ux:Name="logo">
+						<Image File="../Images/MainPage_logo.png" Alignment="Center" Layer="Layout" Width="width(Test1)*0.5" />
+					</StackPanel>
+
+					<StackPanel Color="#575757" Width="width(Test1)*0.95" Height="height(Test1)*0.35" ux:Name="gongji" Y="100">
+						<Text Value="공지 리스트 출력" Alignment="Center" Color="#FEFCFF" FontSize="40" Margin="0, 90, 0, 0" /> 
+					</StackPanel>
+					<StackPanel Color="#575757" Width="width(Test1)*0.95" Height="height(Test1)*0.9" Y=350  ux:Name="gesipan">
+						<Text Value="게시판 리스트 출력" Alignment="Center" Color="#FEFCFF" FontSize="40" Margin="0, 130, 0, 0" /> 
+					</StackPanel>
+		
+
+				</Panel>
+			</ScrollView>
+		</DockPanel>
+
+	</EdgeNavigator>
+</Page>

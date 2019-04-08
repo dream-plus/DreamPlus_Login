@@ -1,0 +1,40 @@
+<Page ux:Class="SignUp">
+<Router ux:Dependency="router" />
+	<JavaScript File="SignUp.js" />
+	<ImageFill File="../Images/loginbg.png" Color="0.5177243, 0.5177243, 0.5177243, 1" Opacity="0.9" StretchMode="Fill" />
+	<Panel Width="100%" Height="100%" ux:Name="Page" Opacity="1">
+		<!-- <Image File="../Images/MainPage_logo.png" Y="height(Page)*0.15" Width="width(Page)*0.53" Alignment="Default" /> -->
+		<Text Value="회원가입" FontSize="25" Y="height(Page)*0.15" Color="#FFFFFF" Opacity="0.8" X="150" />
+	</Panel>
+	<Panel ux:Name="registerInfo">
+		<Rectangle Width="width(registerInfo)*0.9" Height="width(registerInfo)" Color="#FCFCFC" CornerRadius="10,10,10,10">
+        <StackPanel Height="95%" Width="95%">
+        	<Text Alignment="Center" FontSize="15.5" Font="Bold">계정 정보 입력</Text>
+        	<Rectangle Height="height(registerInfo)*1.6*0.62*0.01" />
+            <Text Alignment="Center" Font="Medium" FontSize="12">드림플러스에서 사용하실</Text>
+            <Text Alignment="Center" Font="Medium" FontSize="12">아이디와 비밀번호를 입력해주세요</Text>
+            <StackPanel Y="height(registerInfo)*1.6*0.62*0.1" ItemSpacing="10">
+            	<Rectangle Width="width(registerInfo)*0.75" Height="height(Page)*0.065" Color="#BCBBBC" CornerRadius="20" Y="-30">
+            		<TextInput  Value="{newID}" Row="0" Column="1" PlaceholderText="아이디 최소 6자이상 입력해주세요" PlaceholderColor="#999" TextColor="#000" CaretColor="#000" Alignment="Center" FontSize="15" /> 
+            	</Rectangle>
+            	<Rectangle Width="width(registerInfo)*0.75" Height="height(Page)*0.065" Color="#BCBBBC" CornerRadius="20" Y="-30">
+            		<TextInput Value="{newPW}" Row="0" Column="1" PlaceholderText="비밀번호 최소 6자 이상 입력해주세요" PlaceholderColor="#999" TextColor="#000" CaretColor="#000" Alignment="Center" FontSize="15" IsPassword="true"/> 
+            	</Rectangle>
+            	<Rectangle Width="width(registerInfo)*0.75" Height="height(Page)*0.065" Color="#BCBBBC" CornerRadius="20" Y="-30">
+            		<TextInput Value="{newName}" Row="0" Column="1" PlaceholderText="사용하실 닉네임을 입력해주세요" PlaceholderColor="#999" TextColor="#000" CaretColor="#000" Alignment="Center" FontSize="15" /> 
+            	</Rectangle>
+            	<Rectangle ux:Name="signupbtn" Width="width(registerInfo)*0.4" Height="height(Page)*0.065" Color="#1FEA78" CornerRadius="20">
+            		<Text Value="회원가입" Alignment="Center" FontSize="15" /> 
+            		<WhilePressed>
+						<Scale Target="signupbtn" Factor="0.9" Duration="0.05" />
+					</WhilePressed>
+					<Clicked>
+						<Callback Handler="{Save}"/>
+					</Clicked>
+            	</Rectangle>
+
+            </StackPanel>
+        </StackPanel>
+    </Rectangle>
+	</Panel>
+</Page>
